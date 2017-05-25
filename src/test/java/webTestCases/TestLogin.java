@@ -20,7 +20,7 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 /**
  * Created by apple on 2017/5/23.
  */
-public class TestLogin extends BaseJdTC {
+public class TestLogin {
     
     //    开始前的准备
     @Before
