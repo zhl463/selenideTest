@@ -21,13 +21,14 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
  * Created by apple on 2017/5/23.
  */
 public class TestLogin extends BaseJdTC {
-    String loginName="test123@163.com";
-    String passwd="test123";
-
-    private String baseUrl="http://www.jd.com";
+    
     //    开始前的准备
     @Before
     public void beforeOpen(){
+        String loginName="test123@163.com";
+    String passwd="test123";
+
+    private String baseUrl="http://www.jd.com";
         addListener(new Highlighter());//添加高亮的监控
         //更改浏览器为chrome
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
@@ -42,15 +43,6 @@ public class TestLogin extends BaseJdTC {
         closeWebDriver();
     }
 
-
-    //    正常登录流程
-    public static void loginFlow(String name,String pwd){
-        highlight($(byText("账户登录")).should(Condition.appear));
-        $(byText("账户登录")).click();
-        $("#loginname").sendKeys(name);
-        $("#nloginpwd").sendKeys(pwd);
-        $("#loginsubmit").click();
-    }
 //    开始测试
 
     @Test
@@ -58,7 +50,11 @@ public class TestLogin extends BaseJdTC {
         highlight($(".link-login")).should(Condition.appear);
         $(".link-login").click();
 
-        loginFlow(loginName,passwd+"9");
+        highlight($(byText("账户登录")).should(Condition.appear));
+        $(byText("账户登录")).click();
+        $("#loginname").sendKeys(loginName);
+        $("#nloginpwd").sendKeys(passwd);
+        $("#loginsubmit").click();
 
         $(".msg-error").should(Condition.appear);
         $(".msg-error").should(Condition.matchText("账户名与密码不匹配，请重新输入"));
