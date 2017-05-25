@@ -38,7 +38,7 @@ public class TestLogin {
 
     @Test
     public void testLoginFailure(){
-        addListener(new Highlighter());//添加高亮的监控
+        //addListener(new Highlighter());//添加高亮的监控
         
 
         //highlight($(byText("账户登录")).should(Condition.appear));
