@@ -20,7 +20,7 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 /**
  * Created by tyoko on 2017/2/17.
  */
-public class TestBaidu {
+public class TestBaiduTC {
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
