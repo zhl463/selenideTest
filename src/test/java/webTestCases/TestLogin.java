@@ -31,7 +31,7 @@ public class TestLogin extends BaseJdTC {
         System.setProperty("selenide.browser","chrome");
         Configuration.browser="chrome";
 //        打开url地址
-        open("http://www.jd.com");
+        open("https://passport.jd.com/new/login.aspx");
     }
 
 //    开始测试
@@ -39,8 +39,7 @@ public class TestLogin extends BaseJdTC {
     @Test
     public void testLoginFailure(){
         addListener(new Highlighter());//添加高亮的监控
-        //highlight($(".link-login")).should(Condition.appear);
-        $(".link-login").click();
+        
 
         //highlight($(byText("账户登录")).should(Condition.appear));
         $(byText("账户登录")).click();
