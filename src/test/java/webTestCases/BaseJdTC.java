@@ -35,7 +35,7 @@ public class BaseJdTC {
         System.setProperty("selenide.browser","chrome");
         Configuration.browser="chrome";
 //        最大化窗口
-        startMaximized=fasle;
+        startMaximized=false;
 //        打开url地址
         open(baseUrl);
     }
