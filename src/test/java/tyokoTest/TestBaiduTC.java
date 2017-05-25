@@ -3,6 +3,7 @@ package tyokoTest;
 import base.Highlighter;
 import com.codeborne.selenide.Configuration;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,13 +14,13 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.addListener;
-
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 
 /**
  * Created by tyoko on 2017/2/17.
  */
-public class TestBaiduTC {
+public class TestBaidu {
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
@@ -42,11 +43,9 @@ public class TestBaiduTC {
 
 
     }
-    
 
     @After
     public void tearDown() throws Exception {
         closeWebDriver();
     }
-
 }
