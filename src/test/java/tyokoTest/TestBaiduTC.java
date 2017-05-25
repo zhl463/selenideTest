@@ -42,5 +42,10 @@ public class TestBaiduTC {
 
 
     }
+    
+    @After
+    public void closeBrowser(){
+        closeWebDriver();
+    }
 
 }
