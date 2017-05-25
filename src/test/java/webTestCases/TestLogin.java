@@ -24,7 +24,7 @@ public class TestLogin extends BaseJdTC {
     
     //    开始前的准备
     @Before
-    public void beforeOpen(){
+    public void setUp() throws Exception{
         
         //更改浏览器为chrome
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
