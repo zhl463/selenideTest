@@ -52,4 +52,8 @@ public class TestLogin extends BaseJdTC {
     }
 
 
+    @After
+    public void tearDown() throws Exception {
+        closeWebDriver();
+    }
 }
