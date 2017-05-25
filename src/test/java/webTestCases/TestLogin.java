@@ -39,10 +39,10 @@ public class TestLogin extends BaseJdTC {
     @Test
     public void testLoginFailure(){
         addListener(new Highlighter());//添加高亮的监控
-        highlight($(".link-login")).should(Condition.appear);
+        //highlight($(".link-login")).should(Condition.appear);
         $(".link-login").click();
 
-        highlight($(byText("账户登录")).should(Condition.appear));
+        //highlight($(byText("账户登录")).should(Condition.appear));
         $(byText("账户登录")).click();
         $("#loginname").setValue("test123@163.com");
         $("#nloginpwd").setValue("test123");
