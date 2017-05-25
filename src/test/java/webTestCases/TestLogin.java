@@ -28,7 +28,7 @@ public class TestLogin extends BaseJdTC {
         String loginName="test123@163.com";
     String passwd="test123";
 
-    private String baseUrl="http://www.jd.com";
+    String baseUrl="http://www.jd.com";
         addListener(new Highlighter());//添加高亮的监控
         //更改浏览器为chrome
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
