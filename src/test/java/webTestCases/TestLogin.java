@@ -25,17 +25,13 @@ public class TestLogin extends BaseJdTC {
     //    开始前的准备
     @Before
     public void beforeOpen(){
-        String loginName="test123@163.com";
-    String passwd="test123";
-
-    String baseUrl="http://www.jd.com";
         addListener(new Highlighter());//添加高亮的监控
         //更改浏览器为chrome
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
         System.setProperty("selenide.browser","chrome");
         Configuration.browser="chrome";
 //        打开url地址
-        open(baseUrl);
+        open("http://www.jd.com");
     }
     //    结束
     @After
@@ -52,8 +48,8 @@ public class TestLogin extends BaseJdTC {
 
         highlight($(byText("账户登录")).should(Condition.appear));
         $(byText("账户登录")).click();
-        $("#loginname").sendKeys(loginName);
-        $("#nloginpwd").sendKeys(passwd);
+        $("#loginname").sendKeys("test123@163.com");
+        $("#nloginpwd").sendKeys("test123");
         $("#loginsubmit").click();
 
         $(".msg-error").should(Condition.appear);
