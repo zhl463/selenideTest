@@ -43,8 +43,9 @@ public class TestBaiduTC {
 
     }
     
+
     @After
-    public void closeBrowser(){
+    public void tearDown() throws Exception {
         closeWebDriver();
     }
 
