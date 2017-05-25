@@ -25,7 +25,7 @@ public class TestLogin extends BaseJdTC {
     //    开始前的准备
     @Before
     public void beforeOpen(){
-        addListener(new Highlighter());//添加高亮的监控
+        
         //更改浏览器为chrome
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver");
         System.setProperty("selenide.browser","chrome");
@@ -33,23 +33,19 @@ public class TestLogin extends BaseJdTC {
 //        打开url地址
         open("http://www.jd.com");
     }
-    //    结束
-    @After
-    public void closeBrowser(){
-        closeWebDriver();
-    }
 
 //    开始测试
 
     @Test
     public void testLoginFailure(){
+        addListener(new Highlighter());//添加高亮的监控
         highlight($(".link-login")).should(Condition.appear);
         $(".link-login").click();
 
         highlight($(byText("账户登录")).should(Condition.appear));
         $(byText("账户登录")).click();
-        $("#loginname").sendKeys("test123@163.com");
-        $("#nloginpwd").sendKeys("test123");
+        $("#loginname").setValue("test123@163.com");
+        $("#nloginpwd").setValue("test123");
         $("#loginsubmit").click();
 
         $(".msg-error").should(Condition.appear);
